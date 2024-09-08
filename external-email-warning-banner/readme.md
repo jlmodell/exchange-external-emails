@@ -3,7 +3,7 @@
  - Use the below to embed an external email warning banner via an email transport rule
  - [if mso] block targets Outlook desktop
  - Web/Mobile Outlook preheaders do not render styles so we're base64 encoding an SVG banner and setting it as a background of a div.
- - [Banner SVG located here](https://github.com/Vets-Now/public/blob/main/external-email-warning-banner/warning-banner.svg) to make updates to the banner modify the SVG & then base64 encode, you can use the following [VS-Code plugin](https://marketplace.visualstudio.com/items?itemName=adamhartford.vscode-base64) to base64 encode.
+ - Use this [SVG](https://github.com/jlmodell/exchange-external-emails/blob/main/external-email-warning-banner/warning-banner.svg) to modify the banner & then base64 encode, you can use the following [VS-Code plugin](https://marketplace.visualstudio.com/items?itemName=adamhartford.vscode-base64) to base64 encode.
 
 #### The below can be prepended to external mail via a Transport rule:
 ```html
@@ -30,7 +30,8 @@
 
 <![endif]-->
 ```
-- EAC > mailflows > rule > new rule
+
+- EAC > Mail Flows > Rules > New Rule > 'prepend caution for external emails' > 'Is received from `Outside the organization` > 'Prepend the message with the disclaimer' > Except if (optional)
 
 ```
 Prepend Caution for External Emails
